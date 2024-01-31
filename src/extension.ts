@@ -43,6 +43,16 @@ export function activate(context: vscode.ExtensionContext) {
   vscode.commands.registerCommand('nodeDependencies.refreshEntry', () =>
     nodeDependenciesProvider.refresh()
   );
+
+  const nodeDependenciesProvider2 = new NodeDependenciesProvider(rootPath);
+
+  vscode.window.createTreeView('nodeDependencies2', { // returns vscode.TreeView
+			treeDataProvider: nodeDependenciesProvider2
+		});
+
+  vscode.commands.registerCommand('nodeDependencies2.refreshEntry', () =>
+    nodeDependenciesProvider2.refresh()
+  );
 }
 
 export function deactivate() {}

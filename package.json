@@ -42,12 +42,31 @@
       {
         "command": "nodeDependencies.deleteEntry",
         "title": "Delete"
+      },
+
+      {
+          "command": "nodeDependencies2.refreshEntry",
+          "title": "Refresh",
+          "icon": {
+              "light": "resources/light/refresh.svg",
+              "dark": "resources/dark/refresh.svg"
+          },
+          "category": "My TreeView extension"
       }
     ],
     "views": {
       "package-explorer": [
         {
           "id": "nodeDependencies",
+          "name": "Node Dependencies",
+          "icon": "media/dep.svg",
+          "contextualTitle": "Package Explorer"
+        }
+      ],
+      "package-explorer-2": [
+        {
+          "//": "`package-explorer-2` is the viewsContainers id",
+          "id": "nodeDependencies2",
           "name": "Node Dependencies",
           "icon": "media/dep.svg",
           "contextualTitle": "Package Explorer"
@@ -65,6 +84,12 @@
         {
           "command": "nodeDependencies.addEntry",
           "when": "view == nodeDependencies"
+        },
+
+        {
+          "command": "nodeDependencies2.refreshEntry",
+          "when": "view == nodeDependencies2",
+          "group": "navigation"
         }
       ],
       "view/item/context": [
@@ -83,6 +108,13 @@
       "activitybar": [
         {
           "id": "package-explorer",
+          "title": "Package Explorer",
+          "icon": "media/dep.svg"
+        }
+      ],
+      "panel": [
+        {
+          "id": "package-explorer-2",
           "title": "Package Explorer",
           "icon": "media/dep.svg"
         }
