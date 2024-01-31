@@ -87,7 +87,13 @@
           "icon": "media/dep.svg"
         }
       ]
-    }
+    },
+    "viewsWelcome": [
+      {
+        "view": "nodeDependencies",
+        "contents": "No node dependencies found [learn more](https://www.npmjs.com/).\n[Add Dependency](command:nodeDependencies.addEntry)"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
