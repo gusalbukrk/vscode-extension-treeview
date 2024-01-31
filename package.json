@@ -11,6 +11,7 @@
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
+  "//": ["`contributes.views` keys indicate which view container will the view be contributed to, it can be explorer, debug, scm, test or a custom view container (e.g. package-explorer)."],
   "contributes": {
     "commands": [
       {
@@ -28,10 +29,12 @@
       }
     ],
     "views": {
-      "explorer": [
+      "package-explorer": [
         {
           "id": "nodeDependencies",
-          "name": "Node Dependencies"
+          "name": "Node Dependencies",
+          "icon": "media/dep.svg",
+          "contextualTitle": "Package Explorer"
         }
       ]
     },
@@ -42,6 +45,15 @@
           "command": "nodeDependencies.refreshEntry",
           "when": "view == nodeDependencies",
           "group": "navigation"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "package-explorer",
+          "title": "Package Explorer",
+          "icon": "media/dep.svg"
         }
       ]
     }
