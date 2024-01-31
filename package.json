@@ -16,6 +16,15 @@
       {
         "command": "treeview.helloWorld",
         "title": "Hello World"
+      },
+      {
+          "command": "nodeDependencies.refreshEntry",
+          "title": "Refresh",
+          "icon": {
+              "light": "resources/light/refresh.svg",
+              "dark": "resources/dark/refresh.svg"
+          },
+          "category": "My TreeView extension"
       }
     ],
     "views": {
@@ -23,6 +32,16 @@
         {
           "id": "nodeDependencies",
           "name": "Node Dependencies"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "//": "a view title menu only shows up when hovering on the view area",
+          "command": "nodeDependencies.refreshEntry",
+          "when": "view == nodeDependencies",
+          "group": "navigation"
         }
       ]
     }
