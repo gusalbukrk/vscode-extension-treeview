@@ -100,10 +100,17 @@ class Dependency extends vscode.TreeItem {
     this.description = this.version;
   }
 
-  iconPath = {
-    light: path.join(__filename, '..', '..', 'resources', 'light', 'dependency.svg'),
-    dark: path.join(__filename, '..', '..', 'resources', 'dark', 'dependency.svg')
-  };
+  // https://code.visualstudio.com/api/references/vscode-api#TreeItem
+  // iconPath?: string | Uri | ThemeIcon | {dark: string | Uri, light: string | Uri}
+  //
+  // iconPath = path.join(__filename, '..', '..', 'resources', 'light', 'dependency.svg');
+  //
+  // iconPath = {
+  //   light: path.join(__filename, '..', '..', 'resources', 'light', 'dependency.svg'),
+  //   dark: path.join(__filename, '..', '..', 'resources', 'dark', 'dependency.svg')
+  // };
+  //
+  iconPath = new vscode.ThemeIcon('ellipsis');
 
   contextValue = 'dependency';
 }
